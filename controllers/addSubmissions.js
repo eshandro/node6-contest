@@ -1,6 +1,6 @@
 var submissions = require('../models/submissions.js');
 
-var Submission = new function(name, url, title, description, votes) {
+var Submission = function(name, url, title, description, votes) {
 	this.name = name;
 	this.url = url;
 	this.title = title;

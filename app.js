@@ -14,16 +14,23 @@ app.get('/', function(req, res) {
 });
 
 app.post('/formsubmit', function(req, res) {
-	console.log(req.body)
+	console.log(addSubmission)
 	var name = req.body.name;
 	var url = req.body.url;
 	var title = req.body.title;
 	var descr = req.body.description;
-	res.send(name, url, title, descr)
-/*	var newSubmission = new Submission(name, url, title, descr);
-	submissions.push(newSubmission);*/
+	var newSubmission = new addSubmission(name, url, title, descr);
+	console.log(newSubmission)
+	submissions.push(newSubmission);
+	console.log(submissions)
+	res.send(JSON.stringify(newSubmission));
 })
 
+/*var test = function() {
+	console.log(addSubmission);
+}
+test();
+*/
 var server = app.listen(3417, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
