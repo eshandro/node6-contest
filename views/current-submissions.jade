@@ -3,7 +3,12 @@ extends layout
 block content
 	.container
 		.row
-			.col-md-offset-2.col-md-10
+			.col-md-offset-2.col-md-8
 				h1 Current Submissions
-				for item in submissions
-					iframe(width="560" height="315" src=item.url frameborder="0" allowfullscreen)
+
+				each item in currentSubmissions
+					iframe(width="560" height="315" src="//www.youtube.com/embed/" + item.url frameborder="0" allowfullscreen)
+
+				if currentSubmissions.length < 8
+					a(href="/")
+						button.add-submission Add another video
