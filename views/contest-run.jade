@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	.container
+		.row
+			.col-md-offset-2.col-md-10
+				h1 Welcome to the contest page
+				p Vote for one of the two videos below
+
+				iframe(width="560" height="315" src="//www.youtube.com/embed/" + #{video1.url} frameborder="0" allowfullscreen)
+				iframe(width="560" height="315" src="//www.youtube.com/embed/" + #{video2.url} frameborder="0" allowfullscreen)					

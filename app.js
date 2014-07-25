@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var submissions = require('./models/submissions.js');
-var Submission = require('./controllers/addSubmissions.js')
+var Submission = require('./controllers/addSubmissions.js');
+var runContest = require('./controllers/runContest.js');
 
 var app = express();
 app.set('view engine', 'jade');
@@ -54,6 +55,7 @@ submissions.push(new Submission('Susie', 'z70XlpjnEb8', 'Charl Schwartzel shot o
 submissions.push(new Submission('Sara', 'blonNcv1yas', 'Tiger Woods - Pro Am swing footage', 'Tiger Woods swing footage'))
 submissions.push(new Submission('Timmy', 'EIcKQkzqgok', 'Top 10 PGA Tour 2013', 'Best moments PGA 2013'))
 submissions.push(new Submission('Dave', 'DyrY97vaDis', 'Rory McIlroy - Golf swing slow mo', 'Rory McIlroy slow-mo golf swing'))
+submissions.push(new Submission('Stasia', 'FQGCAbxswzE', 'Top 5 Wild and Crazy Tiger Woods golf shots', 'Crazy golf shots by Tiger Woods'))
 
 var server = app.listen(3417, function() {
 	console.log('Express server listening on port ' + server.address().port);

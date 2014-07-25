@@ -6,6 +6,7 @@ var Submission = function(name, url, title, description, votes) {
 	this.title = title;
 	this.description = description;
 	this.votes = votes;
+	this.id = submissions.length;
 };
 
 
