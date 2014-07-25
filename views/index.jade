@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	.container
+		.row
+		.col-md-offset-1.col-md-11
+		h1 Welcome to the video submission contest!
+		p Please enter a video for the contest below
+		form.submission-form.form-horizontal(method="post", action="/formsubmit", role="form")
+			.form-group
+				label.col-sm-2.control-label Your Name
+				.col-sm-10
+					input.form-control(name="name", type="text", placeholder="Enter your name")
+			.form-group
+				label.col-sm-2.control-label Youtube URL
+				.col-sm-10
+					input.form-control(name="url", type="text", placeholder="Enter the Youtube URL")
+			.form-group
+				label.col-sm-2.control-label Video Title
+				.col-sm-10
+					input.form-control(name="title", type="text", placeholder="Enter the title of your video")
+			.form-group
+				label.col-sm-2.control-label Video Description
+				.col-sm-10
+					input.form-control(name="description", type="text", placeholder="Describe the video")
+			.col-sm-offset-2.col-sm-10
+				input(type="submit")
+
