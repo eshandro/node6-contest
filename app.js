@@ -36,16 +36,24 @@ app.post('/formsubmit', function(req, res) {
 	else {
 		res.redirect('/contest-full')
 	}
-})
+});
 
 app.get('/entries', function(req,res) {
 	res.render('current-submissions', {
 		currentSubmissions: submissions
 	})	
-})
+});
 
 app.get('/contest-full', function(req, res) {
 	res.render('contest-full');
+});
+
+app.get('/contest-run', function(req,res) {
+	var startVideos = runContest.startContest();
+	res.render('contest-run', {
+		contestVideos: startVideos,
+
+	})
 })
 
 // Preloading videos for testing
@@ -56,6 +64,7 @@ submissions.push(new Submission('Sara', 'blonNcv1yas', 'Tiger Woods - Pro Am swi
 submissions.push(new Submission('Timmy', 'EIcKQkzqgok', 'Top 10 PGA Tour 2013', 'Best moments PGA 2013'))
 submissions.push(new Submission('Dave', 'DyrY97vaDis', 'Rory McIlroy - Golf swing slow mo', 'Rory McIlroy slow-mo golf swing'))
 submissions.push(new Submission('Stasia', 'FQGCAbxswzE', 'Top 5 Wild and Crazy Tiger Woods golf shots', 'Crazy golf shots by Tiger Woods'))
+submissions.push(new Submission('Erik', 'OuAzIKni2yg', 'Top 10 all-time golf shots', 'Top 10 shots from World Golf Championships'))
 
 var server = app.listen(3417, function() {
 	console.log('Express server listening on port ' + server.address().port);

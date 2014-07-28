@@ -6,14 +6,16 @@ block content
 			.col-md-offset-2.col-md-10
 				if currentSubmissions.length >= 8
 					h1 All Videos Submitted
-					a(href="/contest")
+					a(href="/contest-run")
 						button Start the Contest
 				else 
 					h1 Current Submissions
 
 				each item in currentSubmissions
+					h2 #{item.title}
 					iframe(width="560" height="315" src="//www.youtube.com/embed/" + item.url frameborder="0" allowfullscreen)
 
 				if currentSubmissions.length < 8
-					a(href="/")
-						button.add-submission Add another video
+					.add-submission
+						a(href="/")
+							button.add-submission Add another video
